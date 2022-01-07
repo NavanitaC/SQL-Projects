@@ -15,7 +15,9 @@ select * from Salesman
 
 select name,commission from Salesman
 
-
 select name,city from Salesman where city='Paris'
 
 select count(DISTINCT(name)) from Salesman
+
+select count(salesman_id) from Salesman where city is not null
+

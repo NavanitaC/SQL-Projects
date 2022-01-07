@@ -27,5 +27,12 @@ select avg(purch_amt) as 'Average purchase amount' from orders
 
 select max(purch_amt) as 'Maximum purchase amount' from orders
 
+select min(purch_amt) as 'Minimum purchase amount' from orders
+
 select customer_id,max(purch_amt) as 'Maximum purchase amount' from orders group by customer_id
 
+select ord_date,salesman_id,count(ord_no) from orders group by ord_date,salesman_id
+
+select count(ord_no) from orders where ord_date='2012-08-17'
+
+select salesman_id,max(purch_amt) from orders where salesman_id between 5003 and 5008 group by salesman_id
