@@ -1,0 +1,1 @@
+create table Countries(country_id char(2) primary key,country_name varchar(40),region_id numeric references Regions(region_id))

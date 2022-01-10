@@ -1,7 +1,7 @@
 drop table orders
 
 create table orders(ord_no numeric(5) primary key,purch_amt decimal(8,2),ord_date date,
-customer_id numeric(5),salesman_id numeric(5))
+customer_id numeric(5) references Customer(customer_id),salesman_id numeric(5) references Salesman(salesman_id) )
 
 insert into orders values(70001,150.5,'2012-10-05',3005,5002)
 insert into orders values(70009,270.65,'2012-09-10',3001,5005)
@@ -36,3 +36,5 @@ select ord_date,salesman_id,count(ord_no) from orders group by ord_date,salesman
 select count(ord_no) from orders where ord_date='2012-08-17'
 
 select salesman_id,max(purch_amt) from orders where salesman_id between 5003 and 5008 group by salesman_id
+
+select ord_no,purch_amt,cust_name,city from orders inner join Customer on orders.customer_id=Customer.customer_id where purch_amt between 500 and 2000

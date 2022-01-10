@@ -1,0 +1,1 @@
+create table Departments(department_id numeric primary key,department_name varchar(30),manager_id numeric,location_id numeric references Locations(location_id))

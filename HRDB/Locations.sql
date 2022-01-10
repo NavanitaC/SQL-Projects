@@ -1,0 +1,2 @@
+create table Locations(location_id numeric primary key,streer_address varchar(25),postal_code varchar(12),city varchar(30),state_province varchar(12),
+country_id char(2) references Countries(country_id))

@@ -21,3 +21,4 @@ select count(DISTINCT(name)) from Salesman
 
 select count(salesman_id) from Salesman where city is not null
 
+select Salesman.name,Customer.cust_name,Customer.city from Salesman inner join Customer on Salesman.salesman_id=Customer.salesman_id where Salesman.city=Customer.city
